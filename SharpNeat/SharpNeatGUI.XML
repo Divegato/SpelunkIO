@@ -1,0 +1,494 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SharpNeatGUI</name>
+    </assembly>
+    <members>
+        <member name="T:SharpNeatGUI.AboutForm">
+            <summary>
+            'About box' form. Displays component version numbers and other info.
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.AboutForm.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="F:SharpNeatGUI.AboutForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.AboutForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SharpNeatGUI.AboutForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:SharpNeatGUI.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:SharpNeatGUI.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:SharpNeatGUI.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:SharpNeatGUI.Properties.Resources.About">
+             <summary>
+               Looks up a localized string similar to NEAT is Neuro-Evolution of Augmenting Topologies - Evolution of Neural Networks.
+            
+            SharpNEAT is an implementation of NEAT created by Colin Green. SharpNEAT is written in C# and targetting the .Net framework. For more information visit http://sharpneat.sourceforge.net/
+            
+            The NEAT method was devised by Kenneth Stanley, currently of the University of Central Florida School of Electrical Engineering and Computer Science. Visit http://www.cs.ucf.edu/~kstanley/ for more info on NEAT including research papers, softw [rest of string was truncated]&quot;;.
+             </summary>
+        </member>
+        <member name="P:SharpNeatGUI.Properties.Resources.Licensing">
+            <summary>
+              Looks up a localized string containing licensing info.
+            </summary>
+        </member>
+        <member name="P:SharpNeatGUI.Properties.Resources.sharpneat_banner">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="T:SharpNeatGUI.SummaryGraphForm">
+            <summary>
+            Form for displaying a graph plot of summary information (e.g. distribution curves).
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.SummaryGraphForm.#ctor(System.String,System.String,System.String,System.String,SharpNeatGUI.SummaryDataSource[],SharpNeat.EvolutionAlgorithms.AbstractGenerationalAlgorithm{SharpNeat.Genomes.Neat.NeatGenome})">
+            <summary>
+            Construct the form with the provided details and data sources.
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.SummaryGraphForm.Reconnect(SharpNeat.EvolutionAlgorithms.AbstractGenerationalAlgorithm{SharpNeat.Genomes.Neat.NeatGenome})">
+            <summary>
+            Called when a new evolution algorithm is initialized. Clean up any existing event listeners and
+            connect up to the new evolution algorithm.
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.SummaryGraphForm._ea_UpdateEvent(System.Object,System.EventArgs)">
+            <summary>
+            Handle update event from the evolution algorithm - update the view.
+            </summary>
+        </member>
+        <member name="F:SharpNeatGUI.SummaryGraphForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.SummaryGraphForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SharpNeatGUI.SummaryGraphForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:SharpNeatGUI.SummaryDataSource">
+            <summary>
+            Data source for the SummaryGraphForm.
+            </summary>
+        </member>
+        <member name="T:SharpNeatGUI.SummaryDataSource.GetDataPointArrayDelegate">
+            <summary>Delegate for obtaining an array of plot points.</summary>
+        </member>
+        <member name="M:SharpNeatGUI.SummaryDataSource.#ctor(System.String,System.Int32,System.Drawing.Color,SharpNeatGUI.SummaryDataSource.GetDataPointArrayDelegate)">
+            <summary>
+            Constructs a data source with the provided source details and delegate for acquiring data.
+            </summary>
+        </member>
+        <member name="P:SharpNeatGUI.SummaryDataSource.Name">
+            <summary>
+            Gets the name of the data source.
+            </summary>
+        </member>
+        <member name="P:SharpNeatGUI.SummaryDataSource.YAxis">
+            <summary>
+            Gets a value that indicates which Y axis the data source should be plotted against.
+            </summary>
+        </member>
+        <member name="P:SharpNeatGUI.SummaryDataSource.Color">
+            <summary>
+            Gets a value that indicates the color that the data should plotted with.
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.SummaryDataSource.GetPointArray">
+            <summary>
+            Gets the data to be plotted.
+            </summary>
+        </member>
+        <member name="T:SharpNeatGUI.TimeSeriesGraphForm">
+            <summary>
+            Form for displaying a graph plot of time series data (e.g. best genome fitness per generation).
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.TimeSeriesGraphForm.#ctor(System.String,System.String,System.String,System.String,SharpNeatGUI.TimeSeriesDataSource[],SharpNeat.EvolutionAlgorithms.AbstractGenerationalAlgorithm{SharpNeat.Genomes.Neat.NeatGenome})">
+            <summary>
+            Construct the form with the provided details and data sources.
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.TimeSeriesGraphForm.Reconnect(SharpNeat.EvolutionAlgorithms.AbstractGenerationalAlgorithm{SharpNeat.Genomes.Neat.NeatGenome})">
+            <summary>
+            Called when a new evolution algorithm is initialized. Clean up any existing event listeners and
+            connect up to the new evolution algorithm.
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.TimeSeriesGraphForm._ea_UpdateEvent(System.Object,System.EventArgs)">
+            <summary>
+            Handle update event from the evolution algorithm - update the view.
+            </summary>
+        </member>
+        <member name="F:SharpNeatGUI.TimeSeriesGraphForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.TimeSeriesGraphForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SharpNeatGUI.TimeSeriesGraphForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:SharpNeatGUI.ProblemDomainForm">
+            <summary>
+            Generic form for problem domain visualization. 
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.ProblemDomainForm.#ctor(System.String,SharpNeat.Domains.AbstractDomainView,SharpNeat.EvolutionAlgorithms.AbstractGenerationalAlgorithm{SharpNeat.Genomes.Neat.NeatGenome})">
+            <summary>
+            Construct with the provided form title, genome view/renderer and evolution algorithm. We listen to update events
+            from the evolution algorithm and cleanly detach from it when this form closes.
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.ProblemDomainForm.Reconnect(SharpNeat.EvolutionAlgorithms.AbstractGenerationalAlgorithm{SharpNeat.Genomes.Neat.NeatGenome})">
+            <summary>
+            Called when a new evolution algorithm is initialized. Clean up any existing event listeners and
+            connect up to the new evolution algorithm.
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.ProblemDomainForm.RefreshView">
+            <summary>
+            Refresh view.
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.ProblemDomainForm._ea_UpdateEvent(System.Object,System.EventArgs)">
+            <summary>
+            Handle update event from the evolution algorithm - update the view.
+            </summary>
+        </member>
+        <member name="F:SharpNeatGUI.ProblemDomainForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.ProblemDomainForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SharpNeatGUI.ProblemDomainForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:SharpNeatGUI.ExperimentInfo">
+            <summary>
+            Stores experiment class info. Used by problem domain drop down combobox in GUI to hold details of
+            how to instantiate selected experiments.
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.ExperimentInfo.#ctor(System.String,System.String,System.String,System.Xml.XmlElement)">
+            <summary>
+            Constructs with the provided experiment info.
+            </summary>
+        </member>
+        <member name="P:SharpNeatGUI.ExperimentInfo.Name">
+            <summary>
+            Experiment name (for display purposes).
+            </summary>
+        </member>
+        <member name="P:SharpNeatGUI.ExperimentInfo.AssemblyPath">
+            <summary>
+            The assembly that contains the experiment's code.
+            </summary>
+        </member>
+        <member name="P:SharpNeatGUI.ExperimentInfo.ClassName">
+            <summary>
+            Name of the class implementing INeatExperiment for this experiment.
+            </summary>
+        </member>
+        <member name="P:SharpNeatGUI.ExperimentInfo.XmlConfig">
+            <summary>
+            Optional XML configuration for the experiment. Originates from the experiments.xml file.
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.ExperimentInfo.ReadExperimentXml(System.String)">
+            <summary>
+            Read an experiments XML file and return the parsed experiments as a list of ExperimentInfo objects.
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.ExperimentInfo.ReadExperimentXml(System.Xml.XmlDocument)">
+            <summary>
+            Read an experiments XML file and return the parsed experiments as a list of ExperimentInfo objects.
+            </summary>
+        </member>
+        <member name="T:SharpNeatGUI.GenomeForm">
+            <summary>
+            Form for genome visualization. A generic form that supports all genome types by wrapping an AbstractGenomeView
+            (the control does the actual visual rendering).
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.GenomeForm.#ctor(System.String,SharpNeat.Domains.AbstractGenomeView,SharpNeat.EvolutionAlgorithms.AbstractGenerationalAlgorithm{SharpNeat.Genomes.Neat.NeatGenome})">
+            <summary>
+            Construct with the provided form title, genome view/renderer and evolution algorithm. We listen to update events
+            from the evolution algorithm and cleanly detach from it when this form closes.
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.GenomeForm.Reconnect(SharpNeat.EvolutionAlgorithms.AbstractGenerationalAlgorithm{SharpNeat.Genomes.Neat.NeatGenome})">
+            <summary>
+            Called when a new evolution algorithm is initialized. Clean up any existing event listeners and
+            connect up to the new evolution algorithm.
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.GenomeForm.RefreshView">
+            <summary>
+            Refresh view.
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.GenomeForm._ea_UpdateEvent(System.Object,System.EventArgs)">
+            <summary>
+            Handle update event from the evolution algorithm - update the view.
+            </summary>
+        </member>
+        <member name="F:SharpNeatGUI.GenomeForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.GenomeForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SharpNeatGUI.GenomeForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:SharpNeatGUI.Logger">
+            <summary>
+            Logging control. The log4net subsystem is configured to patch log message through to this classes
+            static Log() method. Log messages are held in a circular buffer and are displayed in a referenced 
+            GUI ListBox.
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.Logger.SetListBox(System.Windows.Forms.ListBox)">
+            <summary>
+            Assign the GUI ListBox to display log messages on.
+            </summary>
+            <param name="lbxLog"></param>
+        </member>
+        <member name="M:SharpNeatGUI.Logger.Log(System.String)">
+            <summary>
+            Log a message.
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.Logger.Clear">
+            <summary>
+            Clear the circular history buffer of log messages.
+            </summary>
+        </member>
+        <member name="T:SharpNeatGUI.Logger.LogItem">
+            <summary>
+            Represents a single log item.
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.Logger.LogItem.#ctor(System.String)">
+            <summary>
+            Construct with the specified log message.
+            </summary>
+        </member>
+        <member name="P:SharpNeatGUI.Logger.LogItem.Message">
+            <summary>
+            Gets the log message.
+            </summary>
+        </member>
+        <member name="T:SharpNeatGUI.MainForm">
+            <summary>
+            SharpNEAT main GUI window.
+            </summary>
+        </member>
+        <member name="F:SharpNeatGUI.MainForm._filenameNumberFormatter">
+            <summary>Number format for building filename when saving champ genomes.</summary>
+        </member>
+        <member name="F:SharpNeatGUI.MainForm._xwSettings">
+            <summary>XmlWriter settings for champ genome saving (format the XML to make it human readable).</summary>
+        </member>
+        <member name="F:SharpNeatGUI.MainForm._champGenomeFitness">
+            <summary>Tracks the best champ fitness observed so far.</summary>
+        </member>
+        <member name="F:SharpNeatGUI.MainForm._plotColorArr">
+            <summary>Array of 'nice' colors for chart plots.</summary>
+        </member>
+        <member name="M:SharpNeatGUI.MainForm.#ctor">
+            <summary>
+            Construct and initialize the form.
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.MainForm.InitProblemDomainList">
+            <summary>
+            Initialise the problem domain combobox. The list of problem domains is read from an XML file; this 
+            allows changes to be made and new domains to be plugged-in without recompiling binaries.
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.MainForm.ReadAndUpdateExperimentParams">
+            <summary>
+            Read experimental parameters from the GUI and update _selectedExperiment with the read values.
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.MainForm.UpdateGuiState_EaReadyPaused">
+            <summary>
+            Evolution algorithm is ready/paused.
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.MainForm.UpdateGuiState_EaRunning">
+            <summary>
+            Evolution algorithm is running.
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.MainForm.MainForm_FormClosing(System.Object,System.Windows.Forms.FormClosingEventArgs)">
+            <summary>
+            Gracefully handle application exit request.
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.MainForm.SelectFileToOpen(System.String,System.String,System.String)">
+            <summary>
+            Ask the user for a filename / path.
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.MainForm.SelectFileToSave(System.String,System.String,System.String)">
+            <summary>
+            Ask the user for a filename / path.
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.MainForm.UpdateRankedDataPoints(System.Int32[],SharpNeat.Utility.Point2DDouble[]@)">
+            <summary>
+            Updates an Point2DDouble array by sorting an array of values and copying the sorted values over the existing values in pointArr.
+            Optionally creates the Point2DDouble array if it is null or is the wrong size.
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.MainForm.UpdateRankedDataPoints(System.Double[],SharpNeat.Utility.Point2DDouble[]@)">
+            <summary>
+            Updates an Point2DDouble array by sorting an array of values and copying the sorted values over the existing values in pointArr.
+            Optionally creates the Point2DDouble array if it is null or is the wrong size.
+            </summary>
+        </member>
+        <member name="F:SharpNeatGUI.MainForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.MainForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:SharpNeatGUI.MainForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:SharpNeatGUI.LogWindowAppender">
+            <summary>
+            Log4net appender that redirects log messages to a custom logging system.
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.LogWindowAppender.Append(log4net.Core.LoggingEvent)">
+            <summary>
+            Handle log event.
+            </summary>
+        </member>
+        <member name="T:SharpNeatGUI.TimeSeriesDataSource">
+            <summary>
+            Data source for the TimeSeriesGraphForm.
+            </summary>
+        </member>
+        <member name="F:SharpNeatGUI.TimeSeriesDataSource.DefaultHistoryLength">
+            <summary>
+            Default number of historic data points to store for rolling time series plots.
+            </summary>
+        </member>
+        <member name="T:SharpNeatGUI.TimeSeriesDataSource.GetPointDelegate">
+            <summary>
+            Delegate for obtaining the current plot point.
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.TimeSeriesDataSource.#ctor(System.String,System.Int32,System.Int32,System.Drawing.Color,SharpNeatGUI.TimeSeriesDataSource.GetPointDelegate)">
+            <summary>
+            Constructs a data source with the provided source details and delegate for acquiring data.
+            </summary>
+        </member>
+        <member name="P:SharpNeatGUI.TimeSeriesDataSource.Name">
+            <summary>
+            Gets the name of the data source.
+            </summary>
+        </member>
+        <member name="P:SharpNeatGUI.TimeSeriesDataSource.HistoryLength">
+            <summary>
+            Gets a value that indicates the number of historic data points to plot at most (the time series plots are 'rolling' plots to prevent memory use increasing indefinitely).
+            </summary>
+        </member>
+        <member name="P:SharpNeatGUI.TimeSeriesDataSource.YAxis">
+            <summary>
+            Gets a value that indicates which Y axis the data source should be plotted against.
+            </summary>
+        </member>
+        <member name="P:SharpNeatGUI.TimeSeriesDataSource.Color">
+            <summary>
+            Gets a value that indicates the color that the data should plotted with.
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.TimeSeriesDataSource.GetPoint">
+            <summary>
+            Gets a new data point to be plotted.
+            </summary>
+        </member>
+        <member name="M:SharpNeatGUI.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+    </members>
+</doc>
