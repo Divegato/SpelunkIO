@@ -1,0 +1,40 @@
+﻿namespace Gamegato.SpelunkIO.Connector
+{
+    public enum ItemEntry : int
+    {
+        RopePile = 0,
+        BombBag = 1,
+        BombBox = 2,
+        Spectacles = 3,
+        ClimbingGloves = 4,
+        PitchersMitt = 5,
+        SpringShoes = 6,
+        SpikeShoes = 7,
+        Paste = 8,
+        Compass = 9,
+        Mattock = 10,
+        Boomerang = 11,
+        Machete = 12,
+        Crysknife = 13,
+        WebGun = 14,
+        Shotgun = 15,
+        FreezeRay = 16,
+        PlasmaCannon = 17,
+        Camera = 18,
+        Teleporter = 19,
+        Parachute = 20,
+        Cape = 21,
+        Jetpack = 22,
+        Shield = 23,
+        RoyalJelly = 24,
+        Idol = 25,
+        Kapala = 26,
+        UdjatEye = 27,
+        Ankh = 28,
+        Hedjet = 29,
+        Scepter = 30,
+        BookOfTheDead = 31,
+        VladsCape = 32,
+        VladsAmulet = 33
+    }
+}
