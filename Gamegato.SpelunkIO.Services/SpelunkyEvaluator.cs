@@ -48,8 +48,9 @@ namespace Gamegato.SpelunkIO.Services
 
         public FitnessInfo Evaluate(IBlackBox box)
         {
-            while (hooks.CurrentLevel == SpelunkyLevel.Empty)
+            while (hooks.CurrentState != SpelunkyState.Active)
             {
+                Console.WriteLine("State: {0}", hooks.CurrentState);
                 Thread.Sleep(1000);
             }
 
@@ -57,14 +58,14 @@ namespace Gamegato.SpelunkIO.Services
 
             _evalCount++;
             Console.WriteLine("Attempt: {0}", _evalCount);
-            while (hooks.StageMinutes < 1 && hooks.CharacterHearts > 0)
+            while (hooks.StageSeconds < 20 && hooks.CharacterHearts > 0)
             {
                 // Activate inputs
                 box.InputSignalArray[0] = hooks.CharacterHearts / 100;
                 // Todo: Replace with Spelunky's visible tiles
                 for (int i = 1; i < box.InputCount; i++)
                 {
-                    box.InputSignalArray[0] = (r.NextDouble() * 2) - 1;
+                    box.InputSignalArray[i] = (r.NextDouble() * 2) - 1;
                 }
 
                 // Active box
